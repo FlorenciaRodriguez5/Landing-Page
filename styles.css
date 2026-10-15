@@ -277,15 +277,13 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 520px;
-  padding-right: 2rem;
+  min-width: 0;
 }
 
-.silhouette-orb {
+.banner-frame {
   position: relative;
-  width: min(84%, 560px);
-  aspect-ratio: 1;
-  border-radius: 50%;
+  width: 100%;
+  border-radius: 12px;
   background: rgba(201, 191, 179, 0.8);
   display: grid;
   place-items: center;
@@ -296,9 +294,8 @@ textarea {
 .hero-reference {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
 }
 
 .page-section {
@@ -425,35 +422,59 @@ textarea {
 
 .about-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 2.8rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.about-heading .section-kicker {
+  justify-content: center;
+}
+
+.about-heading .section-title {
+  margin-bottom: 0;
+}
+
+.about-copy {
+  width: min(100%, 760px);
+}
+
+.about-copy .timeline,
+.about-copy .training {
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+}
+
+.about-copy .training ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 .portrait-case {
-  width: min(100%, 570px);
-  min-height: 560px;
+  width: min(100%, 600px);
   background: rgba(201, 191, 179, 0.72);
-  border-radius: 26px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  box-shadow: 0 26px 40px rgba(33, 28, 22, 0.08);
+  box-shadow: 0 12px 24px rgba(33, 28, 22, 0.06);
 }
 
 .portrait-case img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-copy p {
   margin: 0 0 1.1rem;
   color: var(--muted);
-  font-size: 1.12rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .timeline {
@@ -471,28 +492,29 @@ textarea {
   color: var(--muted);
 }
 
-.timeline-item {
+.timeline-grid {
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 0.8rem;
-  align-items: start;
-  margin-bottom: 1.1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
 }
 
-.timeline-item .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-top: 0.7rem;
-  justify-self: center;
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  text-align: left;
 }
 
 .timeline-item strong {
   display: block;
   font-size: 0.92rem;
   color: var(--muted);
-  margin-bottom: 0.15rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
 }
 
 .timeline-item .position {
@@ -810,6 +832,7 @@ textarea {
 
   .services-grid,
   .process-grid,
+  .timeline-grid,
   .work-model-grid {
     grid-template-columns: 1fr;
   }

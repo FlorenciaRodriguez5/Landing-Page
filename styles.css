@@ -348,11 +348,18 @@ textarea {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  margin-inline: auto;
+  justify-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.7rem;
 }
 
 .service-card {
+  width: 100%;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -851,3 +858,24 @@ textarea {
     align-items: flex-start;
   }
 }
+
+.brand-description {
+  max-width: 280px;
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.topbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.topbar > .button { flex-shrink: 0; }
+.hero-copy .experience-note { font-size: 1rem; line-height: 1.6; }
+.service-list {
+  margin: 1.2rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.service-list li + li { margin-top: 0.65rem; }
